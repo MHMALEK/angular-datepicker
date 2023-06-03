@@ -1,0 +1,137 @@
+<form [formGroup]="sampleForm" (ngSubmit)="onSubmit()">
+  <div>
+    <h2>Simple Date picker with options</h2>
+
+    <ngx-air-datepicker-custom-component
+      formControlName="datePickerSample"
+      [airDatepickerConfig]="{
+        dateFormat: 'MMMM yyyy'
+      }"
+    >
+      <div class="relative">
+        <input
+          type="text"
+          id="floating_filled"
+          class="block rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+          placeholder=" "
+          ngxAirDatePickerInput
+        />
+        <label
+          for="floating_filled"
+          class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4"
+          >Floating filled</label
+        >
+      </div>
+    </ngx-air-datepicker-custom-component>
+
+    <div>
+      Selected date is:
+      <p>
+        {{ sampleForm.controls["datePickerSample"].value?.formattedDate }}
+      </p>
+      <p>
+        {{ sampleForm.controls["datePickerSample"].value?.date }}
+      </p>
+    </div>
+  </div>
+
+  <div>
+    <h2>Simple Multi select Datepicker</h2>
+    <label>
+      date:
+      <ngx-air-datepicker-multi-select-custom-component
+        formControlName="datePickerMultiSelectSample"
+        [airDatepickerConfig]="{
+          dateFormat: 'MMMM yyyy'
+        }"
+      >
+        <div class="mb-6">
+          <label
+            for="success"
+            class="block mb-2 text-sm font-medium text-green-700 dark:text-green-500"
+            >Your name</label
+          >
+          <input
+            type="text"
+            id="success"
+            class="bg-green-50 border border-green-500 text-green-900 dark:text-green-400 placeholder-green-700 dark:placeholder-green-500 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-green-500"
+            placeholder="Success input"
+            ngxAirDatePickerInput
+          />
+          <p class="mt-2 text-sm text-green-600 dark:text-green-500">
+            <span class="font-medium">Well done!</span> Some success message.
+          </p>
+        </div>
+      </ngx-air-datepicker-multi-select-custom-component>
+    </label>
+
+    <div>
+      Selected date is:
+      <p>
+        {{
+          sampleForm.controls["datePickerMultiSelectSample"].value
+            ?.formattedDate
+        }}
+      </p>
+      <p>
+        {{ sampleForm.controls["datePickerMultiSelectSample"].value?.date }}
+      </p>
+    </div>
+  </div>
+
+  <div>
+    <h2>Simple Range Datepicker</h2>
+    <label>
+      date:
+      <ngx-air-datepicker-range-custom-component
+        formControlName="datePickerRangeSample"
+        [airDatepickerConfig]="{
+          dateFormat: 'MMMM yyyy'
+        }"
+      >
+        <label
+          for="input-group-1"
+          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          >Your Email</label
+        >
+        <div class="relative mb-6">
+          <div
+            class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none"
+          >
+            <svg
+              aria-hidden="true"
+              class="w-5 h-5 text-gray-500 dark:text-gray-400"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"
+              ></path>
+              <path
+                d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"
+              ></path>
+            </svg>
+          </div>
+          <input
+            type="text"
+            id="input-group-1"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="name@flowbite.com"
+            ngxAirDatePickerInput
+          />
+        </div>
+      </ngx-air-datepicker-range-custom-component>
+    </label>
+
+    <div>
+      Selected date is:
+      <p>
+        {{ sampleForm.controls["datePickerRangeSample"].value?.formattedDate }}
+      </p>
+      <p>
+        {{ sampleForm.controls["datePickerRangeSample"].value?.date }}
+      </p>
+    </div>
+  </div>
+</form>
